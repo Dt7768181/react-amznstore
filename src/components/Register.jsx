@@ -25,10 +25,6 @@ export default function Register() {
       <br/>
       <br/>    
       <input type='password' onChange={(e)=>setRuser({...ruser,password:e.target.value})} placeholder='Enter Password'/>
-      <br/>    
-      <br/>    
-      <label for='consent'>By clicking on this you consent to give your email to iamascammer store</label>
-      <input type='checkbox' id='consent'/>
       <br/>
       <br/>
       <Link to="../login">Already a Member</Link>
@@ -36,9 +32,22 @@ export default function Register() {
       <button onClick={handleUser} id="enter">Register</button>
       </div>
       <div className='regd'>
+        <table className='App-Register-Table'>
+          <tr>
+            <th>Name </th>
+            <th>Username </th>
+            <th>Email </th>
+            <th>Remove </th>
+          </tr>
         {users.map((value,index)=>(
-        <li>{value.name} | {value.username} | {value.email}---<Link to="../login">Login</Link>-<button id="remov" onClick={()=>removeuser(value)}>Remove</button></li>
+          <tr>
+            <td>{value.name}</td>
+            <td>{value.username}</td>
+            <td>{value.email}</td>
+            <td><button id="remov" onClick={()=>removeuser(value)}>Remove</button></td>
+          </tr>
         ))}
+        </table>
       </div>
     </div>
   )

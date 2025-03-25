@@ -23,3 +23,15 @@
     padding: 10px;
     border-radius: 10px;
 }
+.App-Register-Table th{
+    border: 1px solid gray;
+    padding: 5px;
+    margin:0px;
+    background-color: gray;
+    color: white;
+}
+.App-Register-Table td{
+    border: 1px solid gray;
+    padding: 5px;
+    margin:0px;
+}
