@@ -13,7 +13,7 @@ export default function products(){
         {id:10,name:"Product10",price:"20"}
     ];
     return(
-        <div>
+        <div className="body">
             <h2>Products List</h2>
             <div className="App-Products-row">
                 {products.map((value,index)=>(

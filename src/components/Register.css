@@ -1,0 +1,25 @@
+.reg{
+    display: flex;
+    justify-content: center; 
+    padding-top: 10px;
+}
+.regd{
+    text-align: center;
+    padding: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#enter{
+    background-color: #03045E;
+    color: white;
+    padding: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 10px;
+}
+#remov{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
