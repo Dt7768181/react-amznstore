@@ -1,13 +1,24 @@
 import React from 'react'
 import './Register.css'
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 import {Link} from "react-router-dom"
 export default function Register() {
   const[users,setUsers]=useState([]);
   const[ruser,setRuser]=useState({});
-  const handleUser=()=>{
-    setUsers([...users,ruser])
-  }
+  const [msg, setMsg] = useState();
+  const txtRef=useRef();
+  const handleUser = () => {
+    const found = users.find((value) => value.email === ruser.email);
+    if (found) {
+      txtRef.current.style.color="red"
+      setMsg("User already exists");
+    } else {
+      txtRef.current.style.color="green"
+      setMsg("Welcome");
+      setUsers([...users, ruser]);
+      setRuser({ ...ruser, name: "", email: "", password: "" });
+    }
+  };
   const removeuser=(val)=>{
     setUsers(users.filter((value)=>val!==value))
   }
@@ -15,6 +26,8 @@ export default function Register() {
     <div className='reg'>
       <div className='regd'>
       <h2>Register</h2>
+      <p ref={txtRef}>{msg}</p>
+      <br/>
       <input type='text' onChange={(e)=>setRuser({...ruser,name:e.target.value})} placeholder='Your name'/>
       <br/>
       <br/>
