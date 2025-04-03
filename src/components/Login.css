@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    padding-top: 10px;
+    padding: 40px;
 }
 .logb{
     padding: 50px;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 10px; 
+    box-shadow: 3px 3px 3px 3px silver;
 }

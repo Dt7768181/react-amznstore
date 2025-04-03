@@ -1,8 +1,9 @@
 .App-Header-Row{
-    display:flex;
+    display: flex;
     justify-content: space-between;
     background-color: #E3FDFD;
 }
+
 .App-Header-Link {
     margin: 5px;
     font-size: 20px;

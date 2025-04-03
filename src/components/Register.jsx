@@ -1,12 +1,14 @@
 import React from 'react'
 import './Register.css'
-import { useState,useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useState,useRef,useContext } from 'react'
 import {Link} from "react-router-dom"
+import {appContext} from '../App'
 export default function Register() {
-  const[users,setUsers]=useState([]);
-  const[ruser,setRuser]=useState({});
+  const {users,setUsers,ruser,setRuser}=useContext(appContext);
   const [msg, setMsg] = useState();
   const txtRef=useRef();
+  const navi1=useNavigate();
   const handleUser = () => {
     const found = users.find((value) => value.email === ruser.email);
     if (found) {
@@ -16,7 +18,9 @@ export default function Register() {
       txtRef.current.style.color="green"
       setMsg("Welcome");
       setUsers([...users, ruser]);
-      setRuser({ ...ruser, name: "", email: "", password: "" });
+      // setRuser({ ...ruser, name: "", email: "", password: "" });
+      // ruser.name=found.name
+      navi1("/Products")
     }
   };
   const removeuser=(val)=>{
@@ -52,7 +56,7 @@ export default function Register() {
             <th>Email </th>
             <th>Remove </th>
           </tr>
-        {users.map((value,index)=>(
+        {users.map((value)=>(
           <tr>
             <td>{value.name}</td>
             <td>{value.username}</td>
